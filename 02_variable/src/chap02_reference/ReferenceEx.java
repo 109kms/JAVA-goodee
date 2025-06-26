@@ -38,11 +38,6 @@ public class ReferenceEx {
     System.out.println(System.identityHashCode(a));  // 참조값은 아니지만 유사한 값을 대신 확인합니다.
     
     
-    
-    
-    
-    
-    
   }
 
 }
