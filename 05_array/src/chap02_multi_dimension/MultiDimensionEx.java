@@ -1,7 +1,5 @@
 package chap02_multi_dimension;
 
-import java.util.Arrays;
-
 public class MultiDimensionEx {
 
   public static void main(String[] args) {
@@ -59,7 +57,10 @@ public class MultiDimensionEx {
      * +-------------------+
      * | seats    : 0x100  |
      * +-------------------+
-     * | ...               |
+     *
+     * 
+     * [Heap] -> new를 이용해 생성한 객체나 배열이 저장되는 곳 
+     * |               
      * +-------------------+
      * | seats[0] : 0xAAA  | 0x100
      * +-------------------+
@@ -67,10 +68,9 @@ public class MultiDimensionEx {
      * +-------------------+
      * | seats[2] : 0xCCC  | 0x108
      * +-------------------+
-     * 
-     * [Heap] -> new를 이용해 생성한 객체나 배열이 저장되는 곳 
-     * |
-     * |                                          [String Constant Pool] -> 문자열 리터럴("")로 생성한 문자열이 저장되는 곳
+     * | ...               |
+     * +-------------------+
+     * |                   |                      [String Constant Pool] -> 문자열 리터럴("")로 생성한 문자열이 저장되는 곳
      * +-------------------+                      +--------+
      * | seats[0][0] : 0x1 | 0xAAA                | 이동욱 | 0x1
      * +-------------------+                      +--------+
