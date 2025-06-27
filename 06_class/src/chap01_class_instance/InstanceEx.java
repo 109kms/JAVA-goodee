@@ -7,7 +7,7 @@ public class InstanceEx {
     // 클래스 Book 타입의 객체 선언(참조 변수 선언)
     Book book1;
     
-    // book1 객체 생성(인스턴스화를 통해서 인스턴스가 생성딥니다.)
+    // book1 객체 생성(인스턴스화를 통해서 인스턴스가 생성됩니다.)
     book1 = new Book();
     
     // book1 객체 정보 확인
@@ -17,7 +17,5 @@ public class InstanceEx {
     Book book2 = new Book();
     System.out.println(book2);
     
-
   }
-
 }
