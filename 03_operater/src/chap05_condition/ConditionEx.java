@@ -12,7 +12,7 @@ public class ConditionEx {
     
     int month = 6;
     int mod = month % 12;
-    String season = mod <= 2 ? "겨울" : mod <= 5 ? "봄" : mod <= 8 ? "여름" : "가을";
+    String season = mod <= 2 ? "겨울" : mod <= 5 ? "봄" : mod <= 8 ? "여름" : "가.을";
     System.out.println(season);
 
   }
