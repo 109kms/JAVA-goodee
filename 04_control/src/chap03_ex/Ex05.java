@@ -14,6 +14,17 @@ public class Ex05 {
     // ...
     // 1429회 모금액 100030원
     
+    int money = 50;
+    int total = 0;
+    int count = 0;
+    
+    while(total < 100000) {
+      count++;
+      total += money;
+      System.out.println(count + "회 모금액 " + total + "원");
+    }
+    
+    
     
 
   }

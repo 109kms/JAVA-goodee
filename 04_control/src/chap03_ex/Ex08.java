@@ -12,8 +12,12 @@ public class Ex08 {
     // ...
     // 9x9=81
     
-    
-
+    for(int a = 2; a <= 9; a++) {
+      for(int b = 1; b <= 9; b++) {
+        System.out.println(a + "x" + b + "=" + (a * b));
+        
+      }
+    }
   }
 
 }
