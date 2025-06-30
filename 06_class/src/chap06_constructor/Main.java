@@ -19,6 +19,10 @@ public class Main {
     // 일반 생성자3 호출
     Car car4 = new Car("Santafe", 4444);
     car4.printInfo();
+    
+    // 일반 생성자 4 호출
+    Car car5 = new Car("G80", 7777, new Brand("Genesis", "Korea"));
+    car5.printInfo();
   }
 
 }

@@ -32,6 +32,7 @@ public class Car {
   // 필드
   String model;  //-- String model = null;
   int price;  //---- int price = 0;
+  Brand brand;  //--- Brand brand = null;
   
   // 디폴트 생성자
   Car(){
@@ -55,10 +56,19 @@ public class Car {
     this.price = price;    
   }
   
-  // 메소드
-  void printInfo() {
-    System.out.println(model + ", " + price);
+  // 일반 생성자4
+  Car(String model, int price, Brand brand){
+    // this(model, price); -> 일반 생성자3을 호출하는 코드입니다.
+    this(model, price);  // this.model - model; this.price = price;
+    this.brand = brand;
   }
   
-
+  // 메소드
+  void printInfo() {
+    if (brand != null) {
+      brand.printInfo();
+    }
+    System.out.println(model + ", " + price);
+  
+  }
 }

@@ -78,6 +78,7 @@ public class PrimitiveEx {
       char b = 'b';
       System.out.println(b + 1);
     }
+   
 
   }
 
