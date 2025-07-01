@@ -1,5 +1,7 @@
 package chap03_ex;
 
+import java.util.Arrays;
+
 public class Ex03 {
 
   public static void main(String[] args) {
@@ -10,6 +12,21 @@ public class Ex03 {
     //      기존 배열의 참조를 새로운 배열의 참조로 바꿉니다.
     
     String[] seasons = {"spring", "summer"};
+    
+    String[] temporary = new String[4];
+    
+    // 배열을 복사하는 방법 (for 문 없이 가능)
+    // COPY seasoms.length FROM seasons[0] TO temporary[0]
+    System.arraycopy(seasons, 0, temporary, 0, seasons.length);
+    
+    // 기존 배열의 참조를 새로운 배열의 참조로 바꾸기
+    seasons = temporary;
+    
+    // "autumn", "winter" 추가
+    seasons[2] = "autumn";
+    seasons[3] = "winter";
+    
+    System.out.println(Arrays.toString(seasons));
         
   }
   

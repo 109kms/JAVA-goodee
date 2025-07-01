@@ -9,6 +9,18 @@ public class Ex05 {
     
     int[] numbers = {1, 2, 3, 4, 5, 0};
     
+    boolean result = true;
+    
+    for(int i = 0; i < numbers.length - 1; i++) {
+      if(numbers[i] > numbers[i + 1]) {
+        result = false;
+      } 
+      
+    }
+    System.out.println(result);
+    
+    
+    
   }
   
 }
