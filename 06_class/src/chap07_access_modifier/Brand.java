@@ -16,6 +16,21 @@ package chap07_access_modifier;
 */
 
 /*
+ * import
+ * 
+ * 1. 다른 패키지에 있는 클래스, 인터페이스, 라이브러리 등을 현재 소스 파일에서 사용할 수 있도록 불러오는 명령어입니다.
+ * 2. 동일한 패키지에 있거나, java.lang 패키지에 있으면 import를 하지 않습니다.
+ * 3. 다른 패키지에 있거나, java.lang 패키지에 없는 것들은 import를 해야 합니다.
+ * 4. import 사용 예시
+ *    1) 특정 클래스 import 하기
+ *      import java.util.Arrays;
+ *    2) 특정 패키지 전체 import 하기
+ *      import java.util.*;
+ * 5. 이클립스의 import 정리 단축키
+ *    Ctrl + Shift + O(대문자)
+ */
+
+/*
  * 캡슐화(Encapsulation)
  * 
  * 데이터(필드)와 기능(메소드)을 하나의 클래스로 묶고,
