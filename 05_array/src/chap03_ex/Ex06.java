@@ -16,6 +16,15 @@ public class Ex06 {
     char[] uppers = new char[26];
     char[] lowers = new char[26];
     
+    int ascii = 65;
+    for(int i = 0; i < uppers.length; i++) {
+      uppers[i] = (char)ascii;
+      ascii += 1;
+    }
+    System.out.println();
+    
+    
+    
   }
   
 }

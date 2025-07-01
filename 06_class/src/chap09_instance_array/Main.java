@@ -18,6 +18,9 @@ public class Main {
     // showInputDiaglog()는 항상 String을 반환하므로 적절한 변환 과정이 필요할 수 있습니다.
     String name = JOptionPane.showInputDialog("이름을 입력하세요.");
     System.out.println(name);
+    
+    
+    
     long age = Integer.parseInt(JOptionPane.showInputDialog("나이를 입력하세요"));
     System.out.println(age);
 
