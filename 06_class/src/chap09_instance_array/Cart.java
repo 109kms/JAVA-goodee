@@ -44,6 +44,31 @@ public class Cart {
     products[count++] = product;
   }
   
-  
+  public Product removeProduct(int idx) {
+    if (count == 0) {
+      JOptionPane.showMessageDialog(null, "Cart가 비어있습니다.");
+      return null;
+    }
+    if (idx < 0 || idx >= count) {
+      JOptionPane.showMessageDialog(null, idx + "는 없는 인덱스입니다.");
+      return null;
+    }
+    Product removed = products[idx];  //----- 삭제된 요소 (현재는 삭제될 요소)
+    System.arraycopy(products, idx + 1, products, idx, count - idx - 1);
+    products[--count] = null;
+    return removed;  //--------------------- 삭제된 요소 반환
+  }
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 }

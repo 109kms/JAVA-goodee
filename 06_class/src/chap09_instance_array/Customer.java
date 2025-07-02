@@ -38,6 +38,13 @@ public class Customer {
     cart.addProduct(product);
   }
   
+  public void removeFromCart(int idx) {
+    Product removed = cart.removeProduct(idx);
+    if (removed != null) {
+      JOptionPane.showMessageDialog(null, removed.getName() + " 제품이 Cart에서 제거되었습니다.");
+    }
+  }
+  
   public String purchase() {
     if(cart == null) {
       JOptionPane.showMessageDialog(null, "cart가 없어서 구매할 수 없습니다.");

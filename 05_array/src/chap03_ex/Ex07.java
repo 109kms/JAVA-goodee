@@ -28,8 +28,10 @@ public class Ex07 {
                         //  | 1 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 |
                         //  └---+---+---+---+---+---+---+---+---+---┘
                         //    0   1   2   3   4   5   6   7   8   9
-    for(int i = 0; i < binary.length; i++) {
-      
+    int i = 0;
+    while(number > 0) {
+      binary[i++] = number % 2;
+      number /= 2;
     }
     
     

@@ -24,10 +24,12 @@ public class Main {
     customer.setCart(cart1);
     
     // 쇼핑
-    customer.addToCart(product1); product1 = null;
-    customer.addToCart(product2); product2 = null;
-    customer.addToCart(product3); product3 = null;
-    customer.addToCart(product4); product4 = null;
+    customer.addToCart(product1);
+    customer.addToCart(product2);
+    customer.addToCart(product3);
+    customer.addToCart(product4);
+    
+    customer.removeFromCart(0);
     
     // 구매
     String receipt = customer.purchase();
@@ -37,6 +39,8 @@ public class Main {
     JOptionPane.showMessageDialog(null, receipt);  // 구매 Product 목록 + 총 구매금액
     JOptionPane.showMessageDialog(null, "남은 돈: " + customer.getMoney());
     }
+    
+    
   }
 
 }

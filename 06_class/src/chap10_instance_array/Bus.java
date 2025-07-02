@@ -1,0 +1,7 @@
+package chap10_instance_array;
+
+public class Bus {
+  
+  
+
+}
