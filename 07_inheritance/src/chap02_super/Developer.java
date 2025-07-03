@@ -24,7 +24,7 @@ public class Developer extends Person{
   
   public void printInfo() {
     // super.name  Person 클래스의 name은 private 멤버이므로, 상속 관계에 있더라도 접근할 수 없습니다.
-    super.printInfo();  //----- 슈퍼클래스의 멤버를 호출합니다. 즉, Person 클래스이 printInfo() 메소드를 호출합니다.
+    super.printInfo();  //----- 슈퍼클래스의 멤버를 호출합니다. 즉, Person 클래스의 printInfo() 메소드를 호출합니다.
     System.out.println("기술: " + Arrays.toString(skills));
   }
   
