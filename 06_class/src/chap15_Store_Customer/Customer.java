@@ -15,7 +15,31 @@ package chap15_Store_Customer;
 public class Customer {
 
   /* 구현 */
+  private int count;
+  private double money;
   
+  public Customer(int count, double money) {
+    super();
+    this.count = count;
+    this.money = money;
+  }
+
+  public int getCount() {
+    return count;
+  }
+
+  public void setCount(int count) {
+    this.count = count;
+  }
+
+  public double getMoney() {
+    return money;
+  }
+
+  public void setMoney(double money) {
+    this.money = money;
+  }
+
   /**
    * 구매 메소드입니다. 
    * 고객이 가지고 있는 돈 이상을 상점에 지불할 수는 없습니다.
@@ -26,6 +50,24 @@ public class Customer {
    */
   public void purchase(Store store, int count, double money) {
     /* 구현 */
+    // 고객이 가지고 있는 돈 이상을 상점에 지불할 수는 없습니다.
+    if (this.money < money) {
+      System.out.println("구매 실패. 현재 보유액: " + this.money + "달러");
+      return;
+    }
+    
+    // 구매하기
+    ProductAndChange productAndChange = null;
+    if (store != null) {
+      productAndChange = store.sell(money, count);
+    }
+    
+    // 구매확인
+    if (productAndChange != null) {
+      this.count += productAndChange.getCount();
+      this.money -= (money - productAndChange.getChange());
+    }
+    
   }
   
 }

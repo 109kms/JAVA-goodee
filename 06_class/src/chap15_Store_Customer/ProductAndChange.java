@@ -14,5 +14,31 @@ package chap15_Store_Customer;
 public class ProductAndChange {
 
   /* 구현 */
+  private int count;
+  private double change;
+  
+  public ProductAndChange(int count, double change) {
+    super();
+    this.count = count;
+    this.change = change;
+  }
+
+  public int getCount() {
+    return count;
+  }
+
+  public void setCount(int count) {
+    this.count = count;
+  }
+
+  public double getChange() {
+    return change;
+  }
+
+  public void setChange(double change) {
+    this.change = change;
+  }
+  
+  
   
 }
