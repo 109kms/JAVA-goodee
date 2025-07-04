@@ -15,7 +15,7 @@ public class Main {
     
     // Cart 진열하기
     Cart cart1 = new Cart(); // 비어있는 카트입니다.
-    Cart cart2 = new Cart(); // 비어있는 카트입니다.
+//    Cart cart2 = new Cart(); // 비어있는 카트입니다.
     
     // Customer 입장
     Customer customer = new Customer(50000);
@@ -28,6 +28,7 @@ public class Main {
     customer.addToCart(product2);
     customer.addToCart(product3);
     customer.addToCart(product4);
+    customer.addToCart(product5);
     
     customer.removeFromCart(0);
     
