@@ -13,10 +13,18 @@ public class BankAccount {
   
   /**
    * 입금 메소드입니다. 마이너스 입금은 불가능합니다.
-   * @param money 입금액을 의미합니다.
+   * @param money 입금하려는 금액을 의미합니다.
    */
   public void deposit(long money) {
     /* 구현 */
+    if(money < 0) {
+      System.out.println(money + "원 입금 불가");
+      return;
+    }else if(money == 0) {
+      return;
+    }
+    balance += money;
+    
   }
   
   /**
@@ -24,9 +32,15 @@ public class BankAccount {
    * @param money 출금하고자 하는 금액입니다. 실제 출금액과 차이가 있을 수 있습니다.
    * @return 실제 출금액을 의미합니다. 출금이 되었다면 money와 동일하고 아니라면 0입니다.
    */
-//  public long withdrawal(long money) {
-//    /* 구현 */
-//  }
+  public long withdrawal(long money) {
+    /* 구현 */
+    if(money < 0 || money > balance) {
+      System.out.println(money + "원 출금 불가");
+      return 0;
+    }
+    balance -= money;
+    return money;
+  }
   
   /**
    * 이체 메소드입니다. 입금 메소드와 출금 메소드를 활용해서 구현해야 합니다.
@@ -36,6 +50,7 @@ public class BankAccount {
    */
   public void transfer(BankAccount bankAccount, long money) {
     /* 구현 */
+    bankAccount.deposit(withdrawal(money));
   }
   
   /**

@@ -26,8 +26,8 @@ public class Store {
    * @param count 구매를 원하는 상품의 개수(count)입니다. 
    * @return 판매한 상품의 개수와 잔돈을 저장하는 ProductAndChange 타입의 객체입니다.
    */
-  public ProductAndChange sell(double money, int count) {
-    /* 구현 */
-  }
+//  public ProductAndChange sell(double money, int count) {
+//    /* 구현 */
+//  }
   
 }

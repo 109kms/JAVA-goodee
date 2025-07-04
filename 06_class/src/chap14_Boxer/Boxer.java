@@ -45,6 +45,11 @@ public class Boxer {
    */
   public void punch(Boxer other) {
     /* 구현 */
+    if (other.energy < power) {
+      other.energy = 0;
+    } else {
+      other.energy -= power;
+    }
   }
   
 }
