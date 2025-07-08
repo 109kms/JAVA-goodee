@@ -1,7 +1,11 @@
 package chap04_set;
 
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 /*
  * Set<T> 인터페이스
@@ -9,7 +13,7 @@ import java.util.Set;
  * 1. JCF(Java Collection Framework)에서 중복을 허용하지 않는 데이터 집합을 정의하는 인터페이스입니다.
  * 2. 수학의 집합과 유사하게, 동일한 요소를 2번 이상 저장할 수 없고, 요소들의 저장 순서도 없습니다.
  * 3. 주요 구현클래스
- *    1) HashSet : 해시 테이블 기반, 순서 보장 없음, 성늘리 우수
+ *    1) HashSet : 해시 테이블 기반, 순서 보장 없음, 성능이 우수
  *    2) TreeSet : 이진 탐색 트리 기반, 순서 보장 가능, 정렬 상태 유지
  *    3) LinkedHashSet : 해시 테이블 + 연결 리스트 기반, 순서 보장 가능, 저장한 순서를 유지
  */
@@ -81,9 +85,54 @@ public class Main {
   
   public static void treeSet() {
     
+    //----- TreeSet : 정렬이 유지되는 Set
+    
+    // Set 인터페이스의 하위 인터페이스 SortedSet 인터페이스를 타입으로 사용
+    
+    SortedSet<String> hobbies = new TreeSet<>();  // 기본 생성 방식은 오름차순 정렬을 지원
+    
+    hobbies.add("여행");
+    hobbies.add("게임");
+    hobbies.add("OTT");
+    hobbies.add("운동");
+    hobbies.add("맛집탐방");
+    hobbies.add("낚시");
+    hobbies.add("독서");  
+    System.out.println(hobbies);
+    
+    String first = hobbies.first();  // 가장 작은 요소
+    String last = hobbies.last();    // 가장 큰 요소
+    System.out.println(first + ", " + last);
+    
+    String from = "게임";
+    String to = "운동";
+    System.out.println(hobbies.subSet(from, to));  // from 포함, to 불포함 범위
+    
+    hobbies = new TreeSet<String>(Comparator.reverseOrder());  // 내림차순 정렬되는 hobbies
+    hobbies.add("여행");
+    hobbies.add("게임");
+    hobbies.add("OTT");
+    hobbies.add("운동");
+    hobbies.add("맛집탐방");
+    hobbies.add("낚시");
+    hobbies.add("독서");  
+    System.out.println(hobbies);
+    
   }
   
   public static void linkedHashSet() {
+    
+    //----- LinkedHashSet : 저장된 순서를 유지하는 Set
+    
+    Set<String> hobbies = new LinkedHashSet<>();
+    
+    hobbies.add("여행");
+    hobbies.add("게임");
+    hobbies.add("OTT");
+    hobbies.add("게임");  // 중복 저장 허용되지 않습니다.
+    hobbies.add("운동");
+    
+    System.out.println(hobbies);  // 요소들의 저장 순서를 보장합니다.
     
   }
   
@@ -91,7 +140,9 @@ public class Main {
 
   public static void main(String[] args) {
     // hashSet();
-    unique();
+    // unique();
+    // treeSet();
+    linkedHashSet();
 
 
   }
