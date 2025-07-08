@@ -131,17 +131,28 @@ public class Main {
     
     // Person 리스트 (일반 클래스)
     List<Person> team = new ArrayList<Person>();
-    team.add(new Person("김무사", 22));
-    team.add(new Person("김라미", 20));
-    team.add(new Person("김후먄", 24));
+    team.add(new Person("김마바", 22));
+    team.add(new Person("김다라", 20));
+    team.add(new Person("김가나", 24));
     
-    // Comparator 인터페이스를 이용해 정렬 방식을 동적으로 설정
+    // Comparator 인터페이스를 이용해 정렬 방식을 동적으로 설정 - 1
     Collections.sort(team, new Comparator<Person>() {
       @Override
       public int compare(Person o1, Person o2) {
         // 나이순으로 정렬해보자.
         return o1.getAge() - o2.getAge();  // 결과가 음수이면 o1이 앞으로, 양수이면 o1이 뒤로 갑니다.
       };
+    });
+    System.out.println(team);
+    
+    // Comparator 인터페이스를 이용해 정렬 방식을 동적으로 설정 - 2
+    Collections.sort(team, new Comparator<Person>() {
+      @Override
+      public int compare(Person o1, Person o2) {
+        // 이름순으로 정렬해 보자
+        // String은 Comparable 인터페이스의 구현체이므로 compareTo() 메소드를 사용할 수 있습니다.
+        return o1.getName().compareTo(o2.getName());
+      }
     });
     System.out.println(team);
     
