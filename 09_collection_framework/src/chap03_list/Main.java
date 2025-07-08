@@ -2,6 +2,8 @@ package chap03_list;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /*
@@ -94,18 +96,54 @@ public class Main {
      * List 정렬하기
      * 
      * 1. 오름차순 정렬
-     *    Collections(List<Comparable>)
+     *    Collections.sort(List<Comparable>)
      * 2. 내림차순 정렬
-     *    Collections(List<Comparable>, Collections.reverseOrder())
+     *    Collections.sort(List<Comparable>, Collections.reverseOrder())
      * 3. List 정렬을 위해서는 Comparable 인터페이스를 구현한 객체를 요소로 저장해야 합니다.
      */
     
+    // String 리스트
+    List<String> list1 = new ArrayList<String>();
+    list1.add("c"); list1.add("d"); list1.add("b"); list1.add("a");
+    Collections.sort(list1);  // 오름차순 정렬
+    System.out.println(list1);
+    Collections.sort(list1, Collections.reverseOrder());  // 내림차순 정렬
+    System.out.println(list1);
+    
+    // Data 리스트
+    List<Data> list2 = new ArrayList<Data>();
+    list2.add(new Data(30)); list2.add(new Data(10)); list2.add(new Data(40)); list2.add(new Data(20));
+    Collections.sort(list2);
+    System.out.println(list2);
+    Collections.sort(list2, Collections.reverseOrder());
+    System.out.println(list2);
+    
     /*
-     * Comparable 인터페이스
+     * Comparator<T> 인터페이스
      * 
      * 1. Functional Interface입니다. (추상 메소드가 1개입니다.)
-     * 2. 정렬이 필요한 객체들은 Comparable 인터페이스의 구현클래스 객체여야 합니다.
+     * 2. 정렬 방식을 동적으로 설정할 때 사용합니다.
+     * 3. Comparator 인터페이스를 이용하면 Comparable 인터페이스를 구현하지 않은 클래스의 객체도 정렬할 수 있습니다.
+     * 4. 추상 메소드
+     *    1) int compare(T t1, T t2);
+     *    2) 결과가 음수이면 t1을 t2의 앞에 두고, 양수이면 t1을 t2의 뒤에 둡니다.
      */
+    
+    // Person 리스트 (일반 클래스)
+    List<Person> team = new ArrayList<Person>();
+    team.add(new Person("김무사", 22));
+    team.add(new Person("김라미", 20));
+    team.add(new Person("김후먄", 24));
+    
+    // Comparator 인터페이스를 이용해 정렬 방식을 동적으로 설정
+    Collections.sort(team, new Comparator<Person>() {
+      @Override
+      public int compare(Person o1, Person o2) {
+        // 나이순으로 정렬해보자.
+        return o1.getAge() - o2.getAge();  // 결과가 음수이면 o1이 앞으로, 양수이면 o1이 뒤로 갑니다.
+      };
+    });
+    System.out.println(team);
     
   }
   
