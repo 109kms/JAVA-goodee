@@ -1,6 +1,7 @@
 package chap02_date_time;
 
 import java.text.SimpleDateFormat;
+import java.util.Map;
 
 /*
  * System.currentTimeMillis()
@@ -42,7 +43,46 @@ public class Class02_System {
     long elapsed = stop - start;  // 나노초 단위의 경과시간
     System.out.println("경과 시간: " + (elapsed / 1_000_000.0) + "ms");
     
-
+    // String vs StringBuilder
+    Map<String, Object> map1 = concatWithString();
+    Map<String, Object> map2 = concatWithStringBuilder();
+    
+    System.out.println("String       : " + map1);
+    System.out.println("StringBuilder: " + map2);
+    
   }
+  
+  //----- String 클래스로 문자열 연결하기
+  public static Map<String, Object> concatWithString() {
+    
+    long start = System.nanoTime();
+    
+    String str = "";  
+    for (char ch = 'A'; ch <='z'; ch++) {
+      str += ch;
+    }
+    
+    long stop = System.nanoTime();
+    
+    return Map.of("str", str, "elapsed", (stop - start) / 1_000_000.0);
+    
+  }
+  
+  //----- StringBuilder 클래스로 문자열 연결하기
+  public static Map<String, Object> concatWithStringBuilder() {
+    
+    long start = System.nanoTime();
+    
+    StringBuilder sb = new StringBuilder();   
+    for (char ch = 'A'; ch <='z'; ch++) {
+      sb.append(ch);
+    }
+    
+    long stop = System.nanoTime();
+    
+    return Map.of("str", sb.toString(), "elapsed", (stop - start) / 1_000_000.0);
+    
+  }
+  
 
 }
