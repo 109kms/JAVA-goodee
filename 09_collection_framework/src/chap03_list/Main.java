@@ -58,7 +58,7 @@ public class Main {
   
   public static void immutable() {
     
-  //----- mutable : 저장된 요소의 개수를 변경할 수 없는 리스트
+  //----- immutable : 저장된 요소의 개수를 변경할 수 없는 리스트
     
     List<String> seasons = Arrays.asList("spring", "summer", "autumn", "winter");
     
