@@ -160,7 +160,7 @@ public class Main {
       builder.append(pw.charAt(idx));
     }
     System.out.println("생성된 " + num + "자리 인증번호는 " + builder + "입니다.");
-       
+    scanner.close();
   }
 
   public static void method7() {
