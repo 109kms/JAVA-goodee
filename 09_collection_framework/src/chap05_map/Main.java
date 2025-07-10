@@ -86,9 +86,9 @@ public class Main {
     map.put("stars", 9.5);
     
     // 1. keySet()을 이용한 순회
-    for (String key : map.keySet()) {
-      System.out.println(key + ": " + map.get(key));
-    }
+//    for (String key : map.keySet()) {
+//      System.out.println(key + ": " + map.get(key));
+//    }
     
     // 2. entrySet()을 이용한 순회 (추천)
     for (Map.Entry<String, Object> entry : map.entrySet()) {

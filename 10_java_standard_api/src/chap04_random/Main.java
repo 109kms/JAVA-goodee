@@ -77,9 +77,9 @@ public class Main {
   }
   
   public static void main(String[] args) {
-    // mathRandom();
+    mathRandom();
     // secureRandom();
-    uuid();
+    // uuid();
 
   }
 
