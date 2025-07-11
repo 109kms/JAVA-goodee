@@ -1,5 +1,12 @@
 package chap04_InputStream;
 
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 /*
  * java.io.InputStream
  * 
@@ -23,9 +30,112 @@ package chap04_InputStream;
  */
 
 public class Main {
+  
+  public static void bufferedInputStream() {
+    
+    File file = new File("C:/Program files/Java/jdk-17", "README");
+    
+    try (BufferedInputStream bin = new BufferedInputStream(new FileInputStream(file))) {
+      
+      //----- int를 이용해 1바이트 단위로 파일 읽기
+      
+      int c;
+      
+      //----- 파일에서 읽은 데이터를 저장해 둘 byte[] 배열
+      byte[] b = new byte[(int)file.length()];
+      int i = 0;
+      
+      /*
+      while (true) {
+        c = bin.read();
+        if (c == -1)
+          break;
+        list.add((byte)c);
+      }
+      */
+      
+      while ( (c = bin.read()) != -1 ) {  // 파일의 끝(EOF == -1)에 도달하지 않았다면 반복합니다.
+        b[i++] = (byte)c;
+      }
+      
+      System.out.println(new String(b));
+      
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    
+  }
 
+  public static void bufferedInputStream2() {
+    
+    File file = new File("C:/Program files/Java/jdk-17", "README");
+    
+    try (BufferedInputStream bin = new BufferedInputStream(new FileInputStream(file))) {
+      
+      //----- byte[] 배열을 이용해 20바이트 단위로 파일 읽기
+      
+      byte[] b = new byte[20];
+      
+      //----- 파일에서 읽은 데이터를 저장해 둘 byte[] 배열
+      byte[] bytes = new byte[(int)file.length()];
+      int i = 0;
+      
+      //----- 파일로부터 실제로 읽은 바이트 수
+      int readByte = 0;
+      
+      while ( (readByte = bin.read(b)) != -1 ) {
+        System.arraycopy(b, 0, bytes, i, readByte);
+        i += readByte;
+      }
+      
+      System.out.println(new String(bytes));
+          
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    
+  }
+
+  public static void systemIn() throws IOException {
+    
+    InputStream in = System.in;  // 표준 입력 스트림(키보드)을 연결
+    
+    int c;
+    
+    while ( (c = in.read()) != -1 ) {  // EOF (ctrl + z)
+      System.out.print((char)c);
+    }
+    
+  }
+
+  public static void dataInputStream() throws IOException {
+    
+    File file = new File("C:/storage/test.bin");
+    
+    DataInputStream din = new DataInputStream( new BufferedInputStream( new FileInputStream(file)));
+    
+    //----- 저장되어 있는 순서대로 읽습니다.
+    int x = din.readInt();  //-------- writeInt() 생성한 값 읽기
+    double y = din.readDouble();  //-- writeDouble() 생성한 값 읽기
+    String s = din.readUTF();  //----- writeUTF()로 생성한 값 읽기
+    
+    System.out.println(x);
+    System.out.println(y);
+    System.out.println(s);  //----- 바이트 스트림이지만 한글이 깨지지 않습니다.
+    
+    din.close();
+    
+  }
+  
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
+    // bufferedInputStream();
+    // bufferedInputStream2();
+    try {
+      // systemIn();
+      dataInputStream();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
 
   }
 
