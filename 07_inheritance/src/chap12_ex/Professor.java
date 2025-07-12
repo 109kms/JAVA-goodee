@@ -1,4 +1,4 @@
-package chap11_ex;
+package chap12_ex;
 
 /**
  * 교수(Professor)는 사람(Person)입니다.

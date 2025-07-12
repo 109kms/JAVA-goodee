@@ -1,4 +1,4 @@
-package chap11_ex;
+package chap12_ex;
 
 /**
  * 학생(Student)은 사람(Person)입니다.

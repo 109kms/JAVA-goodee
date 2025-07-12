@@ -1,4 +1,4 @@
-package chap11_ex;
+package chap12_ex;
 
 /**
  * 대학(College) 클래스입니다.

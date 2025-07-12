@@ -8,7 +8,7 @@ public class Main {
     
     try {
       
-      Lotto lotto = new Lotto();
+      Lotto_Ex lotto = new Lotto_Ex();
       
       List<String> papers = lotto.generateLotto(lotto.buyLotto());
       

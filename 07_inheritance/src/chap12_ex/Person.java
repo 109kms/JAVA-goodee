@@ -1,4 +1,4 @@
-package chap11_ex;
+package chap12_ex;
 
 /**
  * 학생(Student)과 교수(Professor)를 관리하기 위한 슈퍼클래스입니다.
