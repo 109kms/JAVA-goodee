@@ -10,7 +10,7 @@ public class Main {
     Parameter parameter = new Parameter();
     
     // 객체 parameter를 이용해서 메소드를 호출합니다.
-    parameter.methodA();  //--- 매개변수(파라미터)까 없으므로 인자(Argument)를 전달하지 않습니다.
+    parameter.methodA();  //--- 매개변수(파라미터)가 없으므로 인자(Argument)를 전달하지 않습니다.
     parameter.methodB(0);  //-- 인자 0이 매겨변수 x로 전달됩니다.
     
     // int[] numbers = {1,2,3};

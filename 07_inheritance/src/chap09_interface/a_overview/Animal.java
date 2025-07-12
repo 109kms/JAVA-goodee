@@ -32,7 +32,7 @@ package chap09_interface.a_overview;
 public interface Animal {
   void move();  //----------- 추상 메소드 (public abstract 자동 추가)
   default void eat() {  //--- 디폴트 메소드 (JDK 8+)
-    System.out.println("ㅁㄱ습니다.");
+    System.out.println("먹습니다.");
   }
   static void breath() {  //- 정적 메소드 (JDK 8+)
     System.out.println("숨쉽니다");
