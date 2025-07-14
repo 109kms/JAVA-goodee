@@ -14,8 +14,10 @@ public class Main {
       String captchaKey = NaverOpenAPI.captchaKey();
       // System.out.println(captchaKey);
       // 2. 캡차 이미지 발급 요청
-      NaverOpenAPI.captchaImage(captchaKey);
-      
+      if (NaverOpenAPI.captchaImage(captchaKey)) {
+        // 3. 사용자 입력값 검증 요청
+        NaverOpenAPI.validateInput(captchaKey);
+      }
     } catch (Exception e) {
       if (e instanceof UnsupportedEncodingException) {
         System.out.println("검색어 인코딩 실패");
