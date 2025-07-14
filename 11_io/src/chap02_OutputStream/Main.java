@@ -12,7 +12,7 @@ import java.io.OutputStream;
  * java.io.OutputStream
  * 
  * 1. 바이트 기반 출력 스트림들의 최상위 추상 클래스입니다. (직접 인스턴스를 생성할 수 없습니다.)
- * 2. 데이터를 외부(파일, 네트워크 등)로 바이트 단위로 출려합니다.
+ * 2. 데이터를 외부(파일, 네트워크 등)로 바이트 단위로 출력합니다.
  * 3. 주요 하위클래스
  *    1) FileOutputStream
  *    2) BufferedOutputStream
