@@ -32,6 +32,7 @@ public class Main {
     System.out.print("사용자 아이디(1,2,3) 입력 >>> "); int uid = sc.nextInt();
     System.out.print("게시글 제목 입력 >>> "); String title = sc.next(); sc.nextLine();
     System.out.print("게시글 내용 입력 >>> "); String content = sc.nextLine();
+    sc.close();
     
     //----- 입력 받는 값으로 파라미터 바인딩
     ps.setInt(1, uid);  // 1번째 ?에 uid 바인딩
@@ -47,21 +48,63 @@ public class Main {
     //----- 자원 해제
     ps.close();
     con.close();
-    sc.close();
     
   }
   
   public static void update() throws Exception {
     
+    Connection con = DBConnection.getConnection();
+    
+    String sql = "UPDATE tbl_board SET title=?, content=?, modified_at= CURRENT_TIMESTAMP WHERE bid=?";
+    
+    PreparedStatement preparedStatement = con.prepareStatement(sql);
+    
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("수정할 bid 입력 >>> "); int bid = scanner.nextInt();
+    System.out.print("title 입력 >>> "); String title = scanner.next(); scanner.nextLine();
+    System.out.print("content 입력 >>> "); String content = scanner.next();
+    scanner.close();
+    
+    preparedStatement.setString(1, title);
+    preparedStatement.setString(2, content);
+    preparedStatement.setInt(3, bid);
+    
+    int count = preparedStatement.executeUpdate();
+    
+    System.out.println(count + "개 수정됨");
+    
+    preparedStatement.close();
+    con.close();
+       
   }
   
   public static void delete() throws Exception {
+    
+    Connection con = DBConnection.getConnection();
+    
+    String sql = "DELETE FROM tbl_board WHERE bid=?";
+    
+    PreparedStatement statement = con.prepareStatement(sql);
+    
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("삭제할 bid 입력 >> "); int bid = scanner.nextInt();
+    scanner.close();
+    statement.setInt(1, bid);
+    
+    int count = statement.executeUpdate();
+    
+    System.out.println(count + "개 삭제됨");
+    
+    statement.close();
+    con.close();
     
   }
 
   public static void main(String[] args) {
     try {
-      insert();
+//      insert();
+//      update();
+      delete();
     } catch (Exception e) {
       e.printStackTrace();
     }
