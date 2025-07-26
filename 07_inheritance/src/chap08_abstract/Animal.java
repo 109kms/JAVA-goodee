@@ -9,7 +9,6 @@ package chap08_abstract;
 
 public abstract class Animal {
 
-  String name;
   //----- 추상 메소드 (Abstract Method)
   // 1. 본문이 없는 메소드입니다.
   // 2. 본문을 나타내는 코드 블록({})을 없애고, abstract 키워드를 추가합니다.
