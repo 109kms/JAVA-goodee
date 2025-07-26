@@ -17,11 +17,17 @@ public class Ex06 {
     char[] lowers = new char[26];
     
     int ascii = 65;
+    int ascii2 = 97;
     for(int i = 0; i < uppers.length; i++) {
       uppers[i] = (char)ascii;
       ascii += 1;
     }
-    System.out.println();
+    for (int n = 0; n < lowers.length; n++) {
+      lowers[n] = (char)ascii2;
+      ascii2 += 1;
+    }
+    System.out.println(uppers);
+    System.out.println(lowers);
     
     
     

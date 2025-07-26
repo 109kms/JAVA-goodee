@@ -6,6 +6,7 @@ public class ReferenceEx {
     
     /*
      * Reference Type
+     * 
      * 1. 참조 타입입니다.
      * 2. 값이 아니라 값이 저장된 메모리의 참조값(주소값)을 저장하는 타입입니다.
      * 3. 종류 (Primitive Type이 아닌 모든 타입)
@@ -29,18 +30,27 @@ public class ReferenceEx {
      *    2) 참조값은 16진수로 표기합니다. (0x 또는 0X로 시작하는 숫자)
      * 5. 자바는 실제 참조값(메모리의 주소값)을 직접 확인하거나 수정할 수 없습니다.
      */
-
+    
     // 가장 대표적인 참조 타입은 문자열을 저장하기 위한 String 클래스 타입입니다.
     
-    String a = new String("Hello World");  // 변수 a                    : 스택 영역에 저장됩니다. "Hello World"가 저장된 메모리 참조값이 변수 a에 저장됩니다.
+    String a = new String("Hello World");  // 변수 a                    : 스택 영역에 생성됩니다. "Hello World"가 저장된 메모리 참조값이 변수 a에 저장됩니다.
                                            // new String("Hello World") : 힙 영역에 저장됩니다. "Hello World" 자체가 저장됩니다.
     System.out.println(a);  // 자바에서는 참조값에 접근할 수 없으므로 참조값이 출력되지 않습니다. 그냥 참조값을 통해 얻을 수 있는 "Hello World"를 출력합니다.
     System.out.println(System.identityHashCode(a));  // 참조값은 아니지만 유사한 값을 대신 확인합니다.
     
-    
+    /*
+     * [Stack 영역]
+     * +-----------+
+     * | a : 0x101 |
+     * +-----------+
+     * 
+     * [Heap 영역]
+     * +-----------+
+     * |   Hello   | 0x100
+     * |   World   |
+     * +-----------+
+     */
+
   }
 
 }
-
-
-
